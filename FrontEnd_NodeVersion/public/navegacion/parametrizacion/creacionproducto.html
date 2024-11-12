@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RositaERP</title>
+    <link rel="stylesheet" href="../../styles/parametrizacion.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    
+    <!-- Contenedor de la barra de menú -->
+    <div class="macbar">
+        <div class="icon"><span class="tooltip">Inicio</span></div>
+        <div class="icon"><span class="tooltip">Ventas</span></div>
+        <div class="icon"><span class="tooltip">Inventario</span></div>
+        
+        <div class="icon" id="parametrizacion-btn">
+            <span class="tooltip">Parametrización</span>
+            <div class="dropdown-menu">
+                <a href="creacioncliente.html" class="menu-option">Parámetros de Producto</a>
+                <a href="creacioncliente.html" class="menu-option">Parámetros de Usuarios</a>
+            </div>
+        </div>
+        <div class="icon"><span class="tooltip">Clientes</span></div>
+    </div>
+    <div class="formulario-container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="mostrarFormulario('producto')">Producto</button>
+            <button class="tab-button" onclick="mostrarFormulario('proveedor')">Proveedor</button>
+        </div>
+        <div id="formProducto" class="formulario activo">
+            <h3>Parametrización de productos</h3>
+            <form id="productoForm">
+                <label>Nombre del Producto</label>
+                <input type="text" id="nombre_producto" required>
+            
+                <label>Descripción</label>
+                <textarea id="descripcion" rows="3" maxlength="100" required></textarea>
+            
+                <label>Costo Unitario</label>
+                <input type="number" id="precio_unitario" required>
+            
+                <label>Fecha de Vencimiento</label>
+                <input type="date" id="fecha_vencimiento" required>
+            
+                <label>Código de Barras</label>
+                <input type="text" id="codigo_barras" maxlength="30" required>
+            
+                <label>Proveedor</label>
+                <select id="proveedor_id" size="5"> 
+                </select>
+            
+                <button type="button" onclick="crearProducto()">Crear producto</button>
+            </form>
+        </div>
+
+       
+        <div id="formProveedor" class="formulario">
+            <h3>parametrización de proveedores</h3>
+            <form id="proveedorForm">
+                <label>Nombre</label>
+                <input type="text" id="nombre_proveedor" required>
+            
+                <label>Contacto</label>
+                <input type="text" id="contacto_proveedor" required>
+            
+                <label>Teléfono</label>
+                <input type="number" id="telefono_proveedor" required>
+            
+                <label>Dirección</label>
+                <input type="text" id="direccion_proveedor" required>
+            
+                <button type="button" onclick="crearProveedor()">Crear proveedor</button>
+            </form>
+        </div>
+    </div>
+    <script src="animacionform.js"></script>
+    <script src="redireccionparametrizacion.js"></script>
+    <script src="../../js/animaciones.js"></script>
+    <script src="../../js/cursor.js"></script>
+    <script src="../funcionesventas/funciones.js"></script>
+    <script src="../funcionesventas/verificacionhaydatos.js"></script>
+    <script src="parametros.js"></script>
+</body>
+</html>

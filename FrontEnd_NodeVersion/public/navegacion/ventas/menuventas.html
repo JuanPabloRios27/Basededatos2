@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RositaERP</title>
+    <link rel="stylesheet" href="../../styles/menuventas.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="sales-area">
+        <div class="scrollable-table">
+            <table class="sales-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Nombre Producto</th>
+                        <th>Codigo Barras</th>    
+                        <th>Unidad</th>
+                        <th>Total Unidad</th>
+                        <th>Desc. Valor</th>
+                        <th>Desc. %</th>
+                        <th>Total Product</th>
+                    </tr>
+                </thead>
+                <tbody id="sales-rows">
+                    <tr>
+                        <td><input type="text" placeholder="Producto" class="producto-input" readonly></td>
+                        <td><input type="text" placeholder="Nombre Producto" readonly></td>
+                        
+                        <td><input type="text" placeholder="Código Barras" class="codigo-barras-input"></td>
+                        <td><input type="number" value="0" min="0" class="cantidad-input"></td>
+                        <td><input type="number" value="0" min="0" readonly class="total-unidad-input"></td>
+                        <td><input type="number" value="0" min="0"></td>
+                        <td><input type="number" value="0" min="0"></td>
+                        <td><input type="number" value="0" min="0" readonly class="total-producto-input"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="totals-area">
+            <div>
+                <label>Total Facturado</label>
+                <input type="text" value="$ 0,00" readonly>
+            </div>
+            <div>
+                <label>Dinero Entregado</label>
+                <input type="text" value="$ 0,00">
+            </div>
+            <div>
+                <label>Cambio</label>
+                <input type="text" value="$" readonly>
+            </div>
+        </div>
+    
+        <div class="discounts-area">
+            <h4>Impuestos Aplicados</h4>
+            <label>Base Gravada:</label>
+            <input type="text" value="0.00" readonly>
+            <label>Valor Total IVA:</label>
+            <input type="text" value="0.00" readonly>
+            <label>Total Impuesto Consumo:</label>
+            <input type="text" value="0.00" readonly>
+            <label>Total Impuesto Consumo Bolsas:</label>
+            <input type="text" value="0.00" readonly>
+            <label>Descuento en Valor:</label>
+            <input type="number" value="0">
+            <label>Descuento en Porcentaje:</label>
+            <input type="number" value="0">
+        </div>
+
+        <div class="buttons-area">
+            <button id="add-row-btn">Añadir Fila</button>
+            <button>Descuento</button>
+            <button>Formas de Pago</button>
+            <button>Salir</button>
+        </div>
+    </div>
+
+    <div class="macbar">
+        <div class="icon"><span class="tooltip">Inicio</span></div>
+        <div class="icon"><span class="tooltip">Ventas</span></div>
+        <div class="icon"><span class="tooltip">Inventario</span></div>
+        <div class="icon" id="parametrizacion-btn">
+            <span class="tooltip">Parametrización</span>
+            <div class="dropdown-menu">
+                <a href="../parametrizacion/creacionproducto.html" class="menu-option">Parametros de Producto</a>
+                <a href="../parametrizacion/creacioncliente.html" class="menu-option">Parametros de Usuarios</a>
+            </div>
+        </div>
+        <div class="icon"><span class="tooltip">Clientes</span></div>
+    </div>
+
+    <script src="redireccionventas.js"></script>
+    <script src="../../js/funciones.js"></script>
+    <script src="../../js/animaciones.js"></script>
+    <script src="../../js/cursor.js"></script>
+    <script src="../funcionesventas/funciones.js"></script>
+    <script src="../funcionesventas/verificacionhaydatos.js"></script>
+</body>
+</html>
