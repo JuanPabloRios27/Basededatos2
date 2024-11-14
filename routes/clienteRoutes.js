@@ -10,7 +10,15 @@ router.get('/count', (req, res) => {
         res.json({ total });
     });
 });
-
+router.get('/clientes', (req, res) => {
+    Cliente.obtenerClientes((err, clientes) => {
+        if (err) {
+            console.error('Error al obtener clientes:', err);
+            return res.status(500).json({ error: 'Error al obtener clientes' });
+        }
+        res.json(clientes);
+    });
+});
 
 router.get('/get/:position', (req, res) => { 
     const position = parseInt(req.params.position);

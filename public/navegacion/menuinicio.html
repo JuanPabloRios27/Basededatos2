@@ -57,30 +57,19 @@
                         </tr>
                     </thead>
                     <tbody id="sales-rows">
-                        <tr>
-                            <td><input type="text" placeholder="Producto"></td>
-                            <td><input type="text" placeholder="Nombre Producto"></td>
-                            <td><input type="text" placeholder="Código Barras"></td>
-                            <td><input type="number" value="0" min="0"></td>
-                            <td><input type="number" value="0" min="0"></td>
-                            <td><input type="number" value="0" min="0"></td>
-                        </tr>
+                        <!-- Los datos se insertarán aquí dinámicamente -->
                     </tbody>
                 </table>
             </div>
             <div class="totals-area">
-                <div>
-                    <label>Total Facturado</label>
-                    <input type="text" value="$ 0,00">
-                </div>
-                <div>
+                <label>Total Facturado</label>
+                <input type="text" value="$ 0,00" readonly>
             </div>
             <div class="buttons-area">
-                <button id="add-row-btn">Generar Reporte</button>
+                <button id="generar-reporte-btn">Generar Reporte</button>
                 <button>Salir</button>
             </div>
-         </div>
-        </div>
+          </div>
         <div class="resize-corner top-left"></div>
         <div class="resize-corner top-right"></div>
         <div class="resize-corner bottom-left"></div>
@@ -100,6 +89,7 @@
         <div class="resize-corner bottom-left"></div>
         <div class="resize-corner bottom-right"></div>
     </div>
+<script src="../js/reportediario.js"></script>
 <script src="../js/tablas.js"></script>
 <script src="../js/animaciones.js"></script>
 <script src="../js/cursor.js"></script>   

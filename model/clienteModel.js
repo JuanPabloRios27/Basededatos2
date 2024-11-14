@@ -11,6 +11,17 @@ const Cliente = {
         });
     },
 
+    obtenerClientes: (callback) => {
+            const query = 'SELECT cliente_id, nombre FROM clientes';
+            db.query(query, (err, results) => {
+                if (err) {
+                    console.error('Error al obtener clientes:', err);
+                    return callback(err);
+                }
+                callback(null, results);
+            });
+        },
+
     // Obtener un cliente por posición
     obtenerClientePorPosicion: (position, callback) => {
         const query = 'SELECT * FROM clientes LIMIT 1 OFFSET ?';

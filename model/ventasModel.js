@@ -1,8 +1,8 @@
-// ventasModel.js
+
 const db = require('../config/db');
 
 const Ventas = {
-    // Método para buscar un producto por código de barras
+    
     buscarPorCodigoBarras: (codigoBarras, callback) => {
         const query = `
             SELECT p.producto_id, p.nombre_producto, p.codigo_barras, p.precio_unitario, i.cantidad_disponible
@@ -16,7 +16,7 @@ const Ventas = {
                 console.error('Error en la consulta de búsqueda:', err);
                 return callback(err, null);
             }
-            // Verifica si se encontró el producto
+         
             if (results.length === 0) {
                 return callback(new Error('Producto no encontrado'), null);
             }

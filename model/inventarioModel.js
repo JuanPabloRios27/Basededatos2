@@ -2,6 +2,7 @@ const db = require('../config/db');
 
 const Inventario = {
     buscarProductos: (searchTerm, limit, offset, callback) => {
+
         const queryData = `
             SELECT inventario.inventario_id, inventario.producto_id, productos.nombre_producto AS nombre, productos.descripcion, inventario.cantidad_disponible
             FROM inventario
@@ -27,7 +28,22 @@ const Inventario = {
                 callback(null, dataResults, total);
             });
         });
-    }
+    },
+    actualizarStock: (inventario_id, cantidadVendida, callback) => {
+        const query = `
+            UPDATE inventario
+            SET cantidad_disponible = cantidad_disponible - ?
+            WHERE inventario_id = ?
+        `;
+        
+        db.query(query, [cantidadVendida, inventario_id], (err, results) => {
+            if (err) {
+                console.error('Error al actualizar el stock:', err);
+                return callback(err);
+            }
+            callback(null, results);
+        });
+    },
 };
 
 module.exports = Inventario;

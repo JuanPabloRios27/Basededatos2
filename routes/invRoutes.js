@@ -12,4 +12,13 @@ router.get('/buscar', (req, res) => {
     });
 });
 
+router.put('/actualizar', (req, res) => {
+    const { inventario_id, cantidad } = req.body;
+    Inventario.actualizarStock(inventario_id, cantidad, (err) => {
+        if (err) return res.status(500).json({ error: err.message });
+        res.json({ message: 'Inventario actualizado' });
+    });
+});
+
+
 module.exports = router;
