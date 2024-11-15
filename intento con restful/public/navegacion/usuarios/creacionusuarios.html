@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RositaERP</title>
+    <link rel="stylesheet" href="../../styles/usuarios.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="user-form">
+        <div class="form-row">
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" readonly>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" readonly>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" readonly>
+        </div>
+        <div class="form-row">
+            <label for="email">Email:</label>
+            <input type="text" id="email" readonly>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" readonly>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" readonly>
+        </div>   
+        <div class="form-row">
+            <label for="estado-civil">Estado Civil:</label>
+            <select id="estado-civil" disabled>
+                <option value="Soltero">Soltero</option>
+                <option value="Casado">Casado</option>
+            </select>
+            <label for="estado">Estado:</label>
+            <select id="estado" disabled>
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+            </select>
+        </div>
+        <div class="navigation-bar">
+            <button id="firstRecordBtn" class="nav-button">⏮</button>
+            <button id="prevRecordBtn" class="nav-button">◀</button>
+            <input type="text" id="currentRecord" class="nav-input" value="1" readonly>
+            <span id="recordCount" class="nav-text">de 1</span>
+            <button id="nextRecordBtn" class="nav-button">▶</button>
+            <button id="lastRecordBtn" class="nav-button">⏭</button>
+            <div class="action-buttons">
+                <button onclick="guardarCliente()" class="action-button"><img src="../../styles/Iconos/guardar.png" alt="Guardar">Guardar</button>
+                <button onclick="actualizarCliente()" class="action-button"><img src="../../styles/Iconos/actualizar.png" alt="Actualizar">Actualizar</button>
+                <button onclick="crearCliente()" class="action-button"><img src="../../styles/Iconos/nuevousuario.png" alt="Nuevo">Nuevo</button>
+                <button onclick="deshacer()"class="action-button"><img src="../../styles/Iconos/deshacer.png" alt="Deshacer">Deshacer</button>
+                <button onclick="eliminarCliente()" class="action-button"><img src="../../styles/Iconos/eliminar.png" alt="Eliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    <div class="macbar">
+       <div class="icon"><span class="tooltip">Inicio</span></div>
+        <div class="icon"><span class="tooltip">Ventas</span></div>
+        <div class="icon"><span class="tooltip">Inventario</span></div>
+        <div class="icon" id="parametrizacion-btn">
+            <span class="tooltip">Parametrización</span>
+            <div class="dropdown-menu">
+                <a href="../parametrizacion/creacionproducto.html" class="menu-option">Parametros de Producto</a>
+                <a href="../parametrizacion/creacioncliente.html" class="menu-option">Parametros de Usuarios</a>
+            </div>
+        </div>
+    
+        <div class="icon"><span class="tooltip">Clientes</span></div>
+    </div>
+    <script src="recDatos.js"></script>
+    <script src="redireccionusuarios.js"></script>
+    <script src="../../js/animaciones.js"></script>
+    <script src="../../js/cursor.js"></script>
+</body>
+</html>

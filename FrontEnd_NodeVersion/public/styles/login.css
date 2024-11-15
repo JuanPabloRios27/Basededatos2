@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Century+Gothic&display=swap");
+
+
+
+body {
+    font-family: "Century Gothic", Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #FFFFFF; 
+    position: relative;
+    cursor: none;
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 5px; 
+    height: 30px; 
+    background-color: #333; 
+    border-radius: 4px;
+    transform: rotate(45deg); 
+    pointer-events: none; 
+    z-index: 9999;
+}
+
+.custom-cursor::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+
+.background-points {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #6c6c6c 1px, transparent 1px); /* Puntos grises claros */
+    background-size: 20px 20px; 
+    opacity: 0.5; 
+    z-index: -2; 
+    animation: flicker 8s infinite alternate ease-in-out;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.5;
+    }
+    10% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    30% {
+        opacity: 0.6;
+    }
+    40% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.9;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.login-container {
+    width: 300px;
+    padding: 30px;
+    background-color: #F3F3F3; 
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.user-icon img {
+    width: 80px;
+    height: 90px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    width: 80%;
+    padding: 10px 15px;
+    padding-left: 40px; 
+    border: 1px solid #CCCCCC; 
+    border-radius: 20px;
+    background-color: #FFFFFF; 
+    font-size: 16px;
+    color: #333333;
+}
+
+.input-container .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888888;
+}
+
+.icon.user::before {
+    content: '👤'; 
+}
+
+.icon.lock::before {
+    content: '🔒'; 
+}
+
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #333333; 
+    color: #FFFFFF; 
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #555555; 
+}
+
+
+.fade-out {
+    animation: fadeOut 0.5s forwards; 
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
