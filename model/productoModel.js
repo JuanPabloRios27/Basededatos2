@@ -1,5 +1,5 @@
 
-const db = require('../config/db'); 
+const db = require('../config/db2'); 
 
 const Producto = {
  
